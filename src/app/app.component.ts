@@ -9,9 +9,9 @@ export class AppComponent {
   title = 'my-to-do-list';
   constructor(){
     console.log("Hello World");
-    setTimeout(()=>{
-      this.title = 'not my-to-do-list';
-      console.log('changed title');
-    }, 2000)
+    // setTimeout(()=>{
+    //   this.title = 'not my-to-do-list';
+    //   console.log('changed title');
+    // }, 2000)
   }
 }

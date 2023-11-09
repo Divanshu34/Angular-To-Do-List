@@ -40,12 +40,19 @@ export class TodosComponent implements OnInit {
         title: "This is title-5",
         desc: "This is description-5",
         active: true
-      },
+      }
     ]
   }
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    // throw new Error('Method not implemented.');
+  }
+
+  deleteTodo(todo:Todo){
+    const index = this.todos.indexOf(todo);
+    console.log(index);
+    this.todos.splice(index, 1);
+    console.log(todo);
   }
 
 }
