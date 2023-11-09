@@ -1,6 +1,13 @@
 <div class="table-responsive">
   <app-add-todo (todoAdd)="addTodo($event)"></app-add-todo>
-  <table class="table table-bordered" *ngFor="let todo of todos">
-    <app-todo-item [todo]="todo" (todoDelete)="deleteTodo($event)" />
-  </table>
+  <!-- if block -->
+  <div *ngIf="this.todos.length === 0; else elseBlock">
+    No Todos to display
+  </div>
+  <!-- else block -->
+  <ng-template #elseBlock>
+    <table class="table table-bordered" *ngFor="let todo of todos">
+      <app-todo-item [todo]="todo" (todoDelete)="deleteTodo($event)" />
+    </table>
+  </ng-template>
 </div>
